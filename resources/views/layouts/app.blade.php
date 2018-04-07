@@ -14,10 +14,7 @@
     <!-- Bootstrap Core CSS -->
 
     @section('css')
-        <link href="{{asset('css/lib/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
-        <!-- Custom CSS -->
-        <link href="{{asset('css/helper.css')}}" rel="stylesheet">
-        <link href="{{asset('css/style.css')}}" rel="stylesheet">
+        @include('styles.css')
     @show
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
@@ -35,60 +32,12 @@
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
-        <!-- header header  -->
-        @include('layouts.header')
-        <!-- End header header -->
-
-        <!-- Left Sidebar  -->
-        @include('layouts.sidebar')
-        <!-- End Left Sidebar  -->
-        <!-- Page wrapper  -->
-        <div class="page-wrapper">
-            <!-- Bread crumb -->
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Dashboard</h3> </div>
-                <div class="col-md-7 align-self-center">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
-                </div>
-            </div>
-            <!-- End Bread crumb -->
-            <!-- Container fluid  -->
-            <div class="container-fluid">
-                <!-- Start Page Content -->
-                <div class="row">
-                    <div class="col-12">
-                            @yield('content')
-                    </div>
-                </div>
-                <!-- End PAge Content -->
-            </div>
-            <!-- End Container fluid  -->
-            <!-- footer -->
-            @include('layouts.footer')
-            <!-- End footer -->
-        </div>
-        <!-- End Page wrapper  -->
+        @yield('content')
     </div>
     <!-- End Wrapper -->
 
     @section('js')
-        <!-- All Jquery -->
-        <script src="{{asset('js/lib/jquery/jquery.min.js')}}"></script>
-        <!-- Bootstrap tether Core JavaScript -->
-        <script src="{{asset('js/lib/bootstrap/js/popper.min.js')}}"></script>
-        <script src="{{asset('js/lib/bootstrap/js/bootstrap.min.js')}}"></script>
-        <!-- slimscrollbar scrollbar JavaScript -->
-        <script src="{{asset('js/jquery.slimscroll.js')}}"></script>
-        <!--Menu sidebar -->
-        <script src="{{asset('js/sidebarmenu.js')}}"></script>
-        <!--stickey kit -->
-        <script src="{{asset('js/lib/sticky-kit-master/dist/sticky-kit.min.js')}}"></script>
-        <!--Custom JavaScript -->
-        <script src="{{asset('js/custom.min.js')}}"></script>
+        @include('styles.js')
     @show
 </body>
 
