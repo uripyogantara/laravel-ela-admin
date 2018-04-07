@@ -36,7 +36,11 @@
                                 <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
                                 <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
                                 <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
-                                <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                <li><a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-power-off"></i> Logout</a>
+                                </li>
                             </ul>
                         </div>
                     </li>
@@ -44,3 +48,6 @@
             </div>
         </nav>
     </div>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+      </form>
